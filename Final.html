@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VR Racing | Benjamin Vrbanić</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Orbitron',sans-serif;
+}
+
+body{
+    background:black;
+    color:#e6ff00;
+    overflow-x:hidden;
+}
+
+/* NASLOVNICA */
+.hero{
+    position: relative;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+
+    /* Pozadinska slika */
+    background-image: url('tvoja-slika.jpg'); /* zamijeni sa svojom slikom */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #e6ff00;
+}
+
+/* Poluprozirni overlay preko slike */
+.hero::before {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.5); /* poluprozirni crni sloj */
+    z-index:0;
+}
+
+.hero h1, .hero p, .hero .main-btn {
+    position: relative;
+    z-index:1; /* tekst iznad overlay-a */
+}
+
+.hero h1{
+    font-size:70px;
+    letter-spacing:6px;
+    font-weight:900;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:20px;
+}
+
+.main-btn{
+    margin-top:20px;
+    padding:15px 40px;
+    border:2px solid #e6ff00;
+    background:transparent;
+    color:#e6ff00;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+    display:block;
+    width:250px;
+}
+
+.main-btn:hover{
+    background:#e6ff00;
+    color:black;
+}
+
+/* SEKCIJE */
+.section{
+    display:none;
+    padding:100px 20px;
+    text-align:center;
+    animation:fadeIn 0.6s ease;
+    max-width:1000px;
+    margin:auto;
+}
+
+.section h2{
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+.section p{
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.back-btn{
+    margin-top:40px;
+    padding:10px 30px;
+    border:2px solid #e6ff00;
+    background:transparent;
+    color:#e6ff00;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#e6ff00;
+    color:black;
+}
+
+/* TABLICE */
+.season{
+    margin-bottom:60px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th,td{
+    border:1px solid #e6ff00;
+    padding:15px;
+}
+
+th{
+    background:#e6ff00;
+    color:black;
+}
+
+/* GALERIJA */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:40px;
+}
+
+.gallery img{
+    width:100%;
+    border:2px solid #e6ff00;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* ANIMACIJA */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);} 
+    to{opacity:1; transform:translateY(0);} 
+}
+</style>
+</head>
+<body>
+
+<!-- NASLOVNICA -->
+<div class="hero" id="home">
+<h1>BENJAMIN VRBANIĆ</h1>
+<p>Karting Slalom | Klasa 3 | VR Racing</p>
+
+<button class="main-btn" onclick="openSection('about')">O MENI</button>
+<button class="main-btn" onclick="openSection('calendar')">KALENDAR 2k26</button>
+<button class="main-btn" onclick="openSection('results')">REZULTATI</button>
+<button class="main-btn" onclick="openSection('gallery')">GALERIJA</button>
+<button class="main-btn" onclick="openSection('contact')">KONTAKT</button>
+</div>
+
+<!-- O MENI -->
+<div class="section" id="about">
+<h2>O MENI</h2>
+
+<p>
+Ljubav prema automobilima i brzini rodila se još u najranijem djetinjstvu. 
+Još kao mali provodio sam sate gledajući utrke, diveći se preciznosti vozača, zvuku motora i napetosti koja traje do posljednje sekunde. 
+Taj osjećaj adrenalina, koncentracije i borbe protiv vremena ostavio je snažan dojam na mene.
+</p>
+
+<p>
+Odluku da se i sam okušam u utrkama donio sam onog trenutka kada sam prvi put bio na promociji karting slalom natjecanja. 
+Tada sam shvatio da to nije samo vožnja – to je spoj tehnike, discipline, mentalne snage i potpune kontrole nad vozilom. 
+Svaka stotinka sekunde može odlučiti pobjednika, a upravo ta preciznost i izazov motivirali su me da postanem dio tog svijeta.
+</p>
+
+<p>
+Danas se natječem u klasi 3, gdje kontinuirano radim na svom napretku – kako tehnički, tako i fizički i mentalno. 
+Svaka utrka za mene predstavlja novu priliku za učenje i pomicanje vlastitih granica. 
+Analiziram svoje vožnje, radim na poboljšanju vremena, usavršavam linije prolaska kroz stazu i razvijam mentalnu stabilnost pod pritiskom natjecanja.
+</p>
+
+<p>
+Moj cilj nije samo sudjelovati, već stalno napredovati i biti konkurentan u svakoj sezoni. 
+Uz predan rad, disciplinu i strast prema motosportu, nastavljam graditi svoje iskustvo i korak po korak približavati se još većim rezultatima.
+</p>
+
+<p><strong>Datum rođenja:</strong> 12.10.2009.</p>
+<p><strong>Mjesto rođenja:</strong> Osijek </p>
+
+<button class="back-btn" onclick="goHome()">NAZAD</button>
+</div>
+
+<!-- REZULTATI -->
+<div class="section" id="results">
+<h2>REZULTATI</h2>
+
+<div class="season">
+<h3>Sezona 2026</h3>
+<table>
+<tr>
+<th>Lokacija</th>
+<th>Datum</th>
+<th>Posebni ispit 1</th>
+<th>Posebni ispit 2</th>
+<th>Ukupno</th>
+</tr>
+<tr>
+<td>grad</td>
+<td>2026</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>grad</td>
+<td>2026</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>grad</td>
+<td>2026</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>grad</td>
+<td>2026</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>grad</td>
+<td>2026</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>grad</td>
+<td>2026</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</table>
+</div>
+
+<button class="back-btn" onclick="goHome()">NAZAD</button>
+</div>
+
+<!-- KALENDAR -->
+<div class="section" id="calendar">
+<h2>KALENDAR UTRKA 2026</h2>
+
+<table>
+<tr>
+<th>Datum</th>
+<th>Lokacija</th>
+</tr>
+<tr>
+<td>2026</td>
+<td>lokacija</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>lokacija</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>lokacija</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>lokacija</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>lokacija</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>lokacija</td>
+</tr>
+</table>
+
+<button class="back-btn" onclick="goHome()">NAZAD</button>
+</div>
+
+<!-- GALERIJA -->
+<div class="section" id="gallery">
+<h2>GALERIJA</h2>
+
+<div class="gallery">
+<img src="slika1.jpg" alt="Slika 1">
+<img src="slika2.jpg" alt="Slika 2">
+</div>
+
+<div class="gallery">
+<img src="slika3.jpg" alt="Slika 3">
+<img src="slika4.jpg" alt="Slika 4">
+</div>
+
+<button class="back-btn" onclick="goHome()">NAZAD</button>
+</div>
+
+<!-- KONTAKT -->
+<div class="section" id="contact">
+<h2>KONTAKT</h2>
+<p>Email: Benjaminvrbanic09@gmail.com</p>
+<p>Instagram: @vrbanicc09</p>
+
+<button class="back-btn" onclick="goHome()">NAZAD</button>
+</div>
+
+<script>
+function openSection(id){
+    document.getElementById("home").style.display="none";
+    document.querySelectorAll(".section").forEach(sec=>sec.style.display="none");
+    document.getElementById(id).style.display="block";
+}
+
+function goHome(){
+    document.getElementById("home").style.display="flex";
+    document.querySelectorAll(".section").forEach(sec=>sec.style.display="none");
+}
+</script>
+
+</body>
+</html>
